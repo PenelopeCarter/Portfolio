@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persian's | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+
+      :root {
+        --brand-red: #ff4747;
+        --dark-bg: #121212;
+        --dark-card: #1e1e1e;
+        --dark-subtle: #2c2c2c;
+        --text-light: #ccc;
+        --text-white: #fff;
+      }
+
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--dark-bg);
+        color: var(--text-white);
+        line-height: 1.7;
+      }
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+      }
+      h2 {
+        font-size: 2.5rem;
+        color: var(--brand-red);
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      section {
+        padding: 6rem 1rem;
+      }
+      .section-light {
+        background-color: var(--dark-card);
+      }
+
+      /* --- Navigation --- */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        background: rgba(18, 18, 18, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-logo {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--text-white);
+        text-decoration: none;
+      }
+      .nav-logo span {
+        color: var(--brand-red);
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+      .nav-links a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--brand-red);
+      }
+
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 1rem;
+      }
+      .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 0.5rem;
+      }
+      .hero h1 span {
+        color: var(--brand-red);
+      }
+      .hero p {
+        font-size: 1.5rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+      }
+      .hero-btn {
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 12px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--text-white);
+        background: var(--brand-red);
+        transition: all 0.3s;
+      }
+      .hero-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 71, 71, 0.4);
+      }
+
+
+      #about p {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+
+
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .skill-pill {
+        background: var(--dark-subtle);
+        color: var(--text-light);
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+      }
+      .project-card {
+        background: var(--dark-card);
+        border: 1px solid var(--dark-subtle);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+      .project-image img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+      .project-content {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .project-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .project-description {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+      .project-actions {
+        margin-top: auto;
+        display: flex;
+        gap: 15px;
+        border-top: 1px solid var(--dark-subtle);
+        padding-top: 1rem;
+      }
+      .project-btn {
+        flex-grow: 1;
+        text-align: center;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: 600;
+        background: var(--dark-subtle);
+        color: var(--text-light);
+        transition: all 0.2s ease;
+      }
+      .project-btn:hover {
+        background: var(--brand-red);
+        color: var(--text-white);
+      }
+      .project-btn.primary {
+        background: var(--brand-red);
+        color: var(--text-white);
+      }
+      .project-btn.primary:hover {
+        background: var(--brand-red-hover);
+      }
+
+      /* --- Contact Section --- */
+      #contact {
+        text-align: center;
+      }
+      #contact p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      /* --- Footer --- */
+      .footer {
+        text-align: center;
+        padding: 2rem;
+      }
+
+      /* --- Animation --- */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .hero h1 {
+          font-size: 3rem;
+        }
+        h2 {
+          font-size: 2rem;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#" class="nav-logo">Persian<span>Kat</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero" id="hero">
+      <h1>Hello, I'm <span>Persian</span>.</h1>
+      <p>Im still learning things cuhh>.< </p>
+      <a href="#projects" class="hero-btn"
+        >View My Work <i class="fa-solid fa-arrow-down"></i
+      ></a>
+    </header>
+
+    <main>
+      <section id="about">
+        <div class="container fade-in">
+          <h2>About Me</h2>
+          <p>
+            im 21yrs old, i love to play drums and sit on my computer all day>.<
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" class="section-light">
+        <div class="container fade-in">
+          <h2>My Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-pill">PHP 2/5</div>
+            <div class="skill-pill">MySQL 2/5</div>
+            <div class="skill-pill">JavaScript 2/5</div>
+            <div class="skill-pill">HTML 2/5</div>
+            <div class="skill-pill">CSS 2/5</div>
+            <div class="skill-pill">cPanel 4/5</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container fade-in">
+          <h2>My Projects</h2>
+          <div class="projects-grid">
+          
+            <div class="project-card">
+              <div class="project-image">
+            
+                <img src="2.jpg" alt="Caly Project Screenshot" />
+              </div>
+              <div class="project-content">
+                <h3>My Personal Website</h3>
+                <p class="project-description">
+                 freaky ahh website (NSFW 18+)
+                </p>
+                <div class="project-actions">
+         
+                  <a
+                    href="http://calyy.my"
+                    target="_blank"
+                    class="project-btn primary"
+                  >
+                    <i class="fa-solid fa-eye"></i> View Live
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      
+
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> Portfolio</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+
+      const faders = document.querySelectorAll(".fade-in");
+      const appearOptions = {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px",
+      };
+      const appearOnScroll = new IntersectionObserver(function (
+        entries,
+        appearOnScroll
+      ) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add("visible");
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      },
+      appearOptions);
+
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
+      });
+    </script>
+  </body>
+</html>
