@@ -15,7 +15,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <style>
-
       :root {
         --brand-red: #ff4747;
         --dark-bg: #121212;
@@ -24,7 +23,6 @@
         --text-light: #ccc;
         --text-white: #fff;
       }
-
 
       * {
         margin: 0;
@@ -101,7 +99,7 @@
         color: var(--brand-red);
       }
 
-
+      /* --- Hero Section --- */
       .hero {
         height: 100vh;
         display: flex;
@@ -110,7 +108,25 @@
         align-items: center;
         text-align: center;
         padding: 0 1rem;
+        padding-top: 60px; /* Offset for navbar */
       }
+      
+      /* NEW STYLE FOR PROFILE IMAGE */
+      .profile-img {
+        width: 180px;  /* Size of the circle */
+        height: 180px;
+        border-radius: 50%; /* Makes it a circle */
+        object-fit: cover; /* Ensures image doesn't stretch */
+        border: 4px solid var(--brand-red); /* Red border */
+        box-shadow: 0 0 25px rgba(255, 71, 71, 0.3); /* Glowing effect */
+        margin-bottom: 1.5rem; /* Space between image and text */
+        transition: transform 0.3s ease;
+      }
+      
+      .profile-img:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+      }
+
       .hero h1 {
         font-size: 4rem;
         margin-bottom: 0.5rem;
@@ -138,14 +154,12 @@
         box-shadow: 0 5px 15px rgba(255, 71, 71, 0.4);
       }
 
-
       #about p {
         text-align: center;
         max-width: 800px;
         margin: 0 auto;
         font-size: 1.1rem;
       }
-
 
       .skills-grid {
         display: flex;
@@ -272,6 +286,10 @@
         .projects-grid {
           grid-template-columns: 1fr;
         }
+        .profile-img {
+          width: 140px;
+          height: 140px;
+        }
       }
     </style>
   </head>
@@ -286,8 +304,10 @@
     </nav>
 
     <header class="hero" id="hero">
+      <img src="your-photo.jpg" alt="Persian Maguillano" class="profile-img">
+      
       <h1>Hello, I'm <span>Persian</span>.</h1>
-      <p>IT Student & Aspiring Game Developer. </p>
+      <p>IT Student & Aspiring Game Developer.</p>
       <a href="#projects" class="hero-btn"
         >View My Work <i class="fa-solid fa-arrow-down"></i
       ></a>
@@ -298,7 +318,13 @@
         <div class="container fade-in">
           <h2>About Me</h2>
           <p>
-       I am a Web Developer transitioning into Game Development, combining structured backend logic with immersive storytelling. My background in building robust web systems allows me to approach game mechanics with systematic thinking and better data management. I’m currently focused on mastering C# and Blender to create high-quality 3D assets and interactive narratives.         </p>
+            I am a Web Developer transitioning into Game Development, combining
+            structured backend logic with immersive storytelling. My background in
+            building robust web systems allows me to approach game mechanics
+            with systematic thinking and better data management. I’m currently
+            focused on mastering C# and Blender to create high-quality 3D assets
+            and interactive narratives.
+          </p>
         </div>
       </section>
 
@@ -312,7 +338,7 @@
             <div class="skill-pill">HTML</div>
             <div class="skill-pill">CSS</div>
             <div class="skill-pill">cPanel</div>
-             <div class="skill-pill">Blender (Asset Assembly)</div>
+            <div class="skill-pill">Blender (Asset Assembly)</div>
           </div>
         </div>
       </section>
@@ -321,19 +347,14 @@
         <div class="container fade-in">
           <h2>My Projects</h2>
           <div class="projects-grid">
-          
             <div class="project-card">
               <div class="project-image">
-            
                 <img src="pene.jpg" alt="Caly Project Screenshot" />
               </div>
               <div class="project-content">
                 <h3>My Personal Website</h3>
-                <p class="project-description">
-                 Personal Website
-                </p>
+                <p class="project-description">Personal Website</p>
                 <div class="project-actions">
-         
                   <a
                     href="http://calyy.my"
                     target="_blank"
@@ -345,18 +366,17 @@
               </div>
             </div>
 
-             <div class="project-card">
+            <div class="project-card">
               <div class="project-image">
-            
                 <img src="Loaf.jpg" alt="Caly Project Screenshot" />
               </div>
               <div class="project-content">
                 <h3>LoafSTIWNU</h3>
                 <p class="project-description">
-                 AI-empowered Lost and Found For STI West Negros University(Capstone Project)
+                  AI-empowered Lost and Found For STI West Negros
+                  University(Capstone Project)
                 </p>
                 <div class="project-actions">
-         
                   <a
                     href="http://Loafstiwnu.calyy.my"
                     target="_blank"
@@ -368,19 +388,17 @@
               </div>
             </div>
 
-             <div class="project-card">
+            <div class="project-card">
               <div class="project-image">
-            
                 <img src="elysion.jpg" alt="Elysion" />
               </div>
               <div class="project-content">
                 <h3>Elysion Develoment</h3>
                 <p class="project-description">
-                 Character - LadyElfriede(Statue)
-                  Please Mute the Video(it has background music)
+                  Character - LadyElfriede(Statue) Please Mute the Video(it has
+                  background music)
                 </p>
                 <div class="project-actions">
-         
                   <a
                     href="https://drive.google.com/file/d/1Tc73ToIUwMQ_fP-kMQwDEoa9CyA7WTE-/view?usp=sharing"
                     target="_blank"
@@ -391,58 +409,41 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      
+      <footer class="footer">
+        <p>&copy; <span id="year"></span> Portfolio</p>
+      </footer>
 
-    <footer class="footer">
-      <p>&copy; <span id="year"></span> Portfolio</p>
-    </footer>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+        const faders = document.querySelectorAll(".fade-in");
+        const appearOptions = {
+          threshold: 0.2,
+          rootMargin: "0px 0px -50px 0px",
+        };
+        const appearOnScroll = new IntersectionObserver(function (
+          entries,
+          appearOnScroll
+        ) {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            } else {
+              entry.target.classList.add("visible");
+              appearOnScroll.unobserve(entry.target);
+            }
+          });
+        },
+        appearOptions);
 
-
-      const faders = document.querySelectorAll(".fade-in");
-      const appearOptions = {
-        threshold: 0.2,
-        rootMargin: "0px 0px -50px 0px",
-      };
-      const appearOnScroll = new IntersectionObserver(function (
-        entries,
-        appearOnScroll
-      ) {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          } else {
-            entry.target.classList.add("visible");
-            appearOnScroll.unobserve(entry.target);
-          }
+        faders.forEach((fader) => {
+          appearOnScroll.observe(fader);
         });
-      },
-      appearOptions);
-
-      faders.forEach((fader) => {
-        appearOnScroll.observe(fader);
-      });
-    </script>
+      </script>
+    </main>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
